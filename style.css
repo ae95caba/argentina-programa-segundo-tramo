@@ -1,0 +1,72 @@
+/* Importación de una fuente de Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Lugrasimo&display=swap");
+
+/* Estilos globales para todos los elementos */
+* {
+  box-sizing: border-box; /* Todos los elementos incluyen el borde y el relleno en el ancho total */
+  padding: 0; /* Se elimina el relleno interno por defecto */
+  margin: 0; /* Se elimina el margen por defecto */
+  list-style: none; /* Se eliminan los marcadores de lista (viñetas) */
+  border: 0; /* Se elimina el borde por defecto */
+  text-decoration: none; /* Se elimina la decoración de texto por defecto (por ejemplo, subrayado en enlaces) */
+}
+
+/* Estilos para el cuerpo del documento */
+body {
+  background-color: black; /* El fondo del cuerpo es negro */
+  color: white; /* El texto del cuerpo es blanco */
+  display: flex; /* El contenido del cuerpo se muestra como un contenedor flexible */
+  flex-direction: column; /* Los elementos se colocan en columnas */
+  align-items: center; /* Los elementos se alinean en el centro horizontalmente */
+  padding: 2rem 0rem; /* Espaciado interno en la parte superior e inferior del cuerpo */
+  justify-content: center; /* Los elementos se alinean en el centro verticalmente */
+  text-align: center; /* El texto se alinea al centro horizontalmente */
+  gap: 2rem; /* Espaciado entre los elementos descendientes (artículos) */
+  font-family: "Dancing Script", cursive; /* Se aplica la fuente 'Dancing Script' al texto del cuerpo */
+}
+
+/* Estilos para el contenedor con clase 'container' */
+.container {
+  width: 15rem; /* El contenedor tiene un ancho de 15 rem */
+  margin-bottom: 2rem; /* Espaciado inferior entre los contenedores */
+  position: relative; /* El contenedor se posiciona de manera relativa */
+}
+
+/* Estilos para la imagen con clase 'avatar' dentro del contenedor */
+.container .avatar {
+  width: 100%; /* La imagen ocupa el 100% del ancho del contenedor */
+}
+
+/* Estilos para el subcontenedor con clase 'subcontainer' dentro del contenedor */
+.container .subcontainer {
+  position: absolute; /* El subcontenedor se posiciona de manera absoluta dentro del contenedor */
+  background-color: black; /* El fondo del subcontenedor es negro */
+  height: 100%; /* El subcontenedor ocupa el 100% de la altura del contenedor */
+  width: 100%; /* El subcontenedor ocupa el 100% del ancho del contenedor */
+  opacity: 0; /* El subcontenedor es inicialmente transparente (no visible) */
+  top: 0; /* El subcontenedor se coloca en la parte superior del contenedor */
+  display: flex; /* El contenido del subcontenedor se muestra como un contenedor flexible */
+  align-items: center; /* Los elementos se alinean en el centro horizontalmente */
+  transition: 500ms; /* La transición de cambios de estilo toma 500 milisegundos */
+}
+
+/* Estilos para el video con clase 'v' dentro del subcontenedor */
+.container .subcontainer .v {
+  width: 100%; /* El video ocupa el 100% del ancho del subcontenedor */
+}
+
+/* Estilos para hacer que el subcontenedor sea visible cuando se pasa el mouse sobre el contenedor */
+.container:hover .subcontainer {
+  opacity: 1; /* Cuando el cursor está sobre el contenedor, el subcontenedor se vuelve completamente visible */
+}
+
+/* Estilos para las listas no ordenadas */
+ul {
+  font-family: "Lugrasimo", cursive; /* Se aplica la fuente 'Lugrasimo' al texto de las listas */
+  margin-top: 1rem; /* Espaciado superior para las listas */
+}
+
+/* Estilos para los párrafos */
+p {
+  font-size: 1.5rem; /* El tamaño del texto de los párrafos es de 1.5 rem */
+}
