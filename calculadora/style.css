@@ -1,0 +1,57 @@
+/* Configuración global para todos los elementos */
+* {
+  margin: 0px; /* Sin margen */
+  box-sizing: border-box; /* Se incluye el tamaño del borde en el cálculo del tamaño total */
+  border: 0px; /* Sin borde */
+}
+
+/* Estilos para el cuerpo del documento */
+body {
+  display: flex; /* Utiliza el modelo de caja flexible */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  min-height: 100vh; /* Altura mínima de la ventana gráfica del navegador */
+}
+
+/* Estilos para la sección principal */
+main {
+  display: flex; /* Utiliza el modelo de caja flexible */
+  flex-direction: column; /* Columnas apiladas verticalmente */
+  gap: 2rem; /* Espacio entre elementos hijos */
+  background-color: grey; /* Color de fondo gris */
+  padding: 1rem; /* Espaciado interno */
+  border-radius: 0.2rem; /* Radio de borde */
+  > .display {
+    background-color: white; /* Color de fondo blanco */
+    padding: 0.3rem; /* Espaciado interno */
+  }
+}
+
+/* Estilos para el formulario */
+form {
+  display: flex; /* Utiliza el modelo de caja flexible */
+  flex-direction: column; /* Columnas apiladas verticalmente */
+  gap: 2rem; /* Espacio entre elementos hijos */
+
+  & * {
+    border-radius: 0.3rem; /* Radio de borde para todos los elementos secundarios */
+  }
+  > .container:first-child {
+    max-width: 100vw; /* Ancho máximo igual al ancho de la ventana gráfica del navegador */
+    display: flex; /* Utiliza el modelo de caja flexible */
+    gap: 0.5rem; /* Espacio entre elementos hijos */
+
+    > input,
+    select {
+      max-width: 30vw; /* Ancho máximo igual al 30% del ancho de la ventana gráfica del navegador */
+    }
+  }
+
+  & button {
+    width: 50%; /* Ancho del botón al 50% */
+  }
+  .container:last-child {
+    display: flex; /* Utiliza el modelo de caja flexible */
+    gap: 1rem; /* Espacio entre elementos hijos */
+  }
+}

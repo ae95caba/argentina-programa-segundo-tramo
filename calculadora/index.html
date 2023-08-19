@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Enlace a la hoja de estilos externa -->
+    <meta charset="UTF-8" />
+    <!-- Codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Configuración de la escala inicial en dispositivos móviles -->
+    <title>Document</title>
+    <!-- Título del documento -->
+    <script src="script.js" defer></script>
+    <!-- Enlace al archivo de script con carga diferida -->
+  </head>
+  <body>
+    <main>
+      <div class="display">0</div>
+      <!-- Div para mostrar el resultado, con valor inicial de 0 -->
+      <form>
+        <div class="container">
+          <input type="number" step="any" placeholder="numero" required />
+          <!-- Entrada de número con atributos de paso y marcador de posición -->
+          <select name="operation" required>
+            <option value="" disabled selected>operacion</option>
+            <!-- Opción deshabilitada y seleccionada por defecto -->
+            <option value="subtraction">resta</option>
+            <!-- Opción de resta -->
+            <option value="addition">suma</option>
+            <!-- Opción de suma -->
+            <option value="multiplication">multiplicacion</option>
+            <!-- Opción de multiplicación -->
+            <option name="operation" value="division">division</option>
+            <!-- Opción de división -->
+          </select>
+          <input type="number" step="any" placeholder="numero" required />
+          <!-- Entrada de número con atributos de paso y marcador de posición -->
+        </div>
+        <div class="container">
+          <button>Calcular</button>
+          <!-- Botón para calcular -->
+          <button>Reset</button>
+          <!-- Botón de reinicio -->
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
