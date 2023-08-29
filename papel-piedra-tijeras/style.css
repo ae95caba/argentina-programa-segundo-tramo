@@ -54,6 +54,11 @@ dialog {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    > input {
+      width: 12rem;
+      border: solid black 1px;
+      text-align: center;
+    }
   }
 }
 
@@ -79,4 +84,7 @@ body {
 #reiniciar {
   padding: 0.5rem;
   border: solid black 1px;
+}
+span {
+  color: red;
 }

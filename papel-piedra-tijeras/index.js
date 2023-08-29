@@ -1,7 +1,8 @@
 function jugarUnaRonda(e) {
-  // juega la eleccion del usuario y obtiene la eleccion de la maquina
-  //define un ganador y actualiza el marcador
-  //
+  //usa el valor de la jugada elegida (al hacer click en una opcion) para jugar una ronda contra la computadora
+  //si es empate muestra un modal
+  //si no, se actualiza el marcador
+  //si alguien gana 3 veces , termina el juego
   const jugadaDelJugador = e.target.id;
 
   function obtenerJugadaComputadora() {
@@ -60,6 +61,7 @@ function jugarUnaRonda(e) {
 }
 
 function actualizarMarcadorDOM() {
+  //actualiza el texto mostrado en pantalla
   const victoriasJugador = document.getElementById("victorias-jugador");
   const victoriasComputadora = document.getElementById("victorias-computadora");
   victoriasJugador.innerText = marcador.rondasGanadasPorJugador;
@@ -76,6 +78,7 @@ const marcador = {
 };
 
 function sumarRondasGanadas() {
+  //incrementa las rondas ganadas
   if (resultado === "Gana la computadora") {
     marcador.rondasGanadasPorComputadora++;
   } else if (resultado === "Gana el jugador") {
@@ -84,6 +87,7 @@ function sumarRondasGanadas() {
 }
 
 function finalizarJuego() {
+  //desabilita la posibilidad de seguir jugnado y muestra en un modal quien es el ganador
   desactivarOpciones();
   modalGanador.showModal();
   if (resultado === "Gana la computadora") {
@@ -93,21 +97,15 @@ function finalizarJuego() {
   }
 }
 
-const opciones = document.querySelectorAll(".opcion");
-opciones.forEach((opcion) => {
-  opcion.addEventListener("click", jugarUnaRonda);
-});
-
-const botonDeReinicio = document.getElementById("reiniciar");
-botonDeReinicio.addEventListener("click", reiniciarJuego);
-
 function reactivarOpciones() {
+  //reactiva la posiblidad de elegir una jugada
   opciones.forEach((opcion) => {
     opcion.disabled = false;
   });
 }
 
 function desactivarOpciones() {
+  //desactiva la posiblidad de elegir una jugada
   opciones.forEach((opcion) => {
     opcion.disabled = true;
   });
@@ -116,11 +114,22 @@ function desactivarOpciones() {
 let nombreDeJugador;
 
 function reiniciarJuego() {
+  //reinicia el marcador y habilida la posibilidad de elegir una jugada
   marcador.reiniciar();
 
   actualizarMarcadorDOM();
   reactivarOpciones();
 }
+
+//interaccion con el DOM
+
+const opciones = document.querySelectorAll(".opcion");
+opciones.forEach((opcion) => {
+  opcion.addEventListener("click", jugarUnaRonda);
+});
+
+const botonDeReinicio = document.getElementById("reiniciar");
+botonDeReinicio.addEventListener("click", reiniciarJuego);
 
 const modalEmpate = document.getElementById("empate");
 const cerrarEmpate = document.getElementById("cerrar-empate");
@@ -147,5 +156,3 @@ cerrarForm.addEventListener("submit", (e) => {
 window.addEventListener("load", function () {
   modalNombre.showModal();
 });
-
-////////////////////////////////////////////////////////////
